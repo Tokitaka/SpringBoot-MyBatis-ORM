@@ -1,10 +1,11 @@
 package shop.mtcoding.jwtstudy.model;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Mapper;
 
-import shop.mtcoding.jwtstudy.dto.BoardDetailOutDto;
-
-import java.util.List;
+import shop.mtcoding.jwtstudy.dto.BoardDetailDBdto;
+import shop.mtcoding.jwtstudy.dto.BoardJoinUserDto;
 
 @Mapper
 public interface BoardRepository {
@@ -18,6 +19,8 @@ public interface BoardRepository {
 
     public Board findById(int id);
 
-    public BoardDetailOutDto findByIdJoinUser(int id);
+    public BoardDetailDBdto findByIdJoinUser(int id);
+
+    public BoardJoinUserDto findByIdJoinUser2(int id);
 
 }

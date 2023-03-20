@@ -15,10 +15,10 @@ public class BoardDetailOutDto2 {
     private Integer id;
     private String title;
     private String content;
-    private UserDto user; // @Id
+    private UserDto user; // Entity 복제 DTO
     private Timestamp createdAt;
 
-    public BoardDetailOutDto2(BoardDetailOutDto board) {
+    public BoardDetailOutDto2(BoardDetailDBdto board) {
         this.id = board.getId();
         this.title = board.getTitle();
         this.content = board.getContent();

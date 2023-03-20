@@ -12,7 +12,7 @@ import lombok.ToString;
 @Setter
 // BoardDetailDBDto
 // DB 조회 Dto : flat 하게 만들기 , Join 된거
-public class BoardDetailOutDto {
+public class BoardDetailDBdto {
     private Integer id;
     private String title;
     private String content;
