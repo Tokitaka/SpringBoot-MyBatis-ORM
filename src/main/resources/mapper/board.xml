@@ -3,7 +3,20 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="shop.mtcoding.jwtstudy.model.board.BoardRepository">
+<mapper namespace="shop.mtcoding.jwtstudy.model.BoardRepository">
+    <select id="findByIdJoinUser" resultType="shop.mtcoding.jwtstudy.dto.BoardDetailOutDto">
+        select b.*, 
+            u.id user_id, 
+            u.username user_username, 
+            u.password user_password, 
+            u.email user_email, 
+            u.created_at user_created_at
+        from board_tb b
+        inner join user_tb u
+        ON b.user_id = u.id
+        WHERE b.id = #{id}
+    </select>
+
     <select id="findAll" resultType="shop.mtcoding.jwtstudy.model.Board">
         select * from board_tb
     </select>

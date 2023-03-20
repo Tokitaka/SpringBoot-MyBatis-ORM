@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="shop.mtcoding.jwtstudy.model.user.UserRepository">
+<mapper namespace="shop.mtcoding.jwtstudy.model.UserRepository">
     <select id="findAll" resultType="shop.mtcoding.jwtstudy.model.User">
         select * from user_tb
     </select>
