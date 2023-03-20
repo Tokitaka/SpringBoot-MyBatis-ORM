@@ -1,4 +1,4 @@
-package shop.mtcoding.jwt_study.model;
+package shop.mtcoding.jwtstudy.model;
 
 import org.apache.ibatis.annotations.Mapper;
 
@@ -16,5 +16,4 @@ public interface BoardRepository {
 
     public Board findById(int id);
 
-    public Board findByUsernameAndPassword(Board board);
 }

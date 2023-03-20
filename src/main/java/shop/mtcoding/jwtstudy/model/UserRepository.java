@@ -1,4 +1,4 @@
-package shop.mtcoding.jwt_study.model;
+package shop.mtcoding.jwtstudy.model;
 
 import java.util.List;
 
@@ -15,6 +15,4 @@ public interface UserRepository {
     public List<User> findAll();
 
     public User findById(int id);
-
-    public User findByUsernameAndPassword(User user);
 }

@@ -1,4 +1,4 @@
-package shop.mtcoding.jwt_study.model;
+package shop.mtcoding.jwtstudy.model;
 
 import java.sql.Timestamp;
 
@@ -11,6 +11,6 @@ public class Board {
     private Integer id;
     private String title;
     private String content;
-    private User user;
+    private int userId; // @Id
     private Timestamp createdAt;
 }

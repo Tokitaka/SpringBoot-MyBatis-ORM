@@ -1,4 +1,4 @@
-package shop.mtcoding.jwt_study.model;
+package shop.mtcoding.jwtstudy.model;
 
 import java.time.LocalDateTime;
 
