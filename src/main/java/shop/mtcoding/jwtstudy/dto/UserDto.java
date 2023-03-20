@@ -1,6 +1,6 @@
 package shop.mtcoding.jwtstudy.dto;
 
-import java.time.LocalDateTime;
+import java.sql.Timestamp;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -15,5 +15,5 @@ public class UserDto {
     private String username;
     private String password;
     private String email;
-    private LocalDateTime createdAt;
+    private Timestamp createdAt;
 }

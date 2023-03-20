@@ -8,4 +8,5 @@ import lombok.Setter;
 public class BoardJoinUserDto {
     private BoardDto board;
     private UserDto user;
+    // private List<BoardDto> boards;
 }

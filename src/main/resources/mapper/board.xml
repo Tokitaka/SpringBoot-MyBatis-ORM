@@ -4,40 +4,23 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="shop.mtcoding.jwtstudy.model.BoardRepository">
-    <!-- BoardDto, UserDto 그대로 매핑하기, 플랫한 필드 오브젝트로 만드는 기술 -->
-    <resultMap id="boardDto" type="shop.mtcoding.jwtstudy.dto.BoardDto">
-        <id property="id" column="id"/>
-        <result property="title" column="title"/>
-        <result property="content" column="content"/>
-        <result property="createdAt" column="created_at"/>
-    </resultMap>
-    <resultMap id="userDto" type="shop.mtcoding.jwtstudy.dto.UserDto">
-         <id property="id" column="id"/>
-        <result property="username" column="username"/>
-        <result property="password" column="password"/>
-        <result property="email" column="email"/>
-        <result property="createdAt" column="created_at"/>
-    </resultMap>
-    <resultMap id="boardjoinUserDto" type="shop.mtcoding.jwtstudy.dto.BoardJoinUserDto">
-         <association property="user" resultMap="userDto">
-         <association property="board" resultMap="boardDto">
+
+       <resultMap id="boardJoinUserDtoF" type="shop.mtcoding.jwtstudy.dto.BoardJoinUserDtoF">
+            <id property="id" column="id"/>
+            <result property="title" column="title"/>
+            <result property="content" column="content"/>
+            <result property="createdAt" column="created_at"/>
+        <association property="user" javaType="shop.mtcoding.jwtstudy.dto.BoardJoinUserDtoF$UserDto"> 
+            <id property="id" column="id"/>
+            <result property="username" column="username"/>
+            <result property="password" column="password"/>
+            <result property="email" column="email"/>
+            <result property="createdAt" column="created_at"/>
+        </association>
     </resultMap>
 
-    <select id="findByIdJoinUser2" resultType="boardjoinUserDto">
+    <select id="findByIdJoinUserF" resultMap="boardJoinUserDtoF">
         select *
-        from board_tb b
-        inner join user_tb u
-        ON b.user_id = u.id
-        WHERE b.id = #{id}
-    </select>
-
-    <select id="findByIdJoinUser" resultType="shop.mtcoding.jwtstudy.dto.BoardDetailDBdto">
-        select b.*, 
-            u.id user_id, 
-            u.username user_username, 
-            u.password user_password, 
-            u.email user_email, 
-            u.created_at user_created_at
         from board_tb b
         inner join user_tb u
         ON b.user_id = u.id

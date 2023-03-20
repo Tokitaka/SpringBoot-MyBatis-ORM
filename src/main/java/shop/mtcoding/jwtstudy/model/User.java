@@ -1,6 +1,6 @@
 package shop.mtcoding.jwtstudy.model;
 
-import java.time.LocalDateTime;
+import java.sql.Timestamp;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -12,5 +12,5 @@ public class User {
     private String username; //
     private String password;
     private String email;
-    private LocalDateTime createdAt;
+    private Timestamp createdAt;
 }

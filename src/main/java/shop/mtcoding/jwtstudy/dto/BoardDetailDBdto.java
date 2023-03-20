@@ -7,7 +7,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-@ToString // Dto는 ToString 막 사용 ~
+// @ToString // Dto는 ToString 막 사용 ~
 @Getter
 @Setter
 // BoardDetailDBDto
